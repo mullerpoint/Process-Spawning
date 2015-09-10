@@ -12,6 +12,7 @@
 
 //Header files - Standard libraries and classes
 #include <stdio.h>
+#include <sys/types.h>
 #include <unistd.h>
 //
 
