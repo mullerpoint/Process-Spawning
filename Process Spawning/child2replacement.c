@@ -24,7 +24,7 @@
 //Main Declaration
 //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-int main(int argv, char* argc[])
+void main(int argv, char* argc[])
 {
 	printf("\t\nProcess #%d, now running program \"child2Replacement.exe\"\n", getpid());//print out the PID of the process after using execv()
 }
