@@ -46,9 +46,10 @@ int main(int argv, char* argc[])
 			if (childCount != 1)//if this is child two(2) replace it 
 			{
 				execl(SPAWN_PROCESS_NAME, NULL); //if its process two replace the process with the execv() command
-			}//if
+			}//if for child 2 replace
 			
-		}//if
+			childCount = 3;
+		}//if child
 		else if (childPID > 0)//if parent process
 		{
 			printf("Parent, my pid is %d: Spawned child #%d whose pid is %d\n", parentPID, childCount+1, childPID);//print the statement that it is a parent and the PID
