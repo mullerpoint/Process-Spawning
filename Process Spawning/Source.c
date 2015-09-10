@@ -60,7 +60,7 @@ int main(int argv, char* argc[])
 		}//else
 	}//for
 
-	return;
+	return 1;
 }//main
 
 
