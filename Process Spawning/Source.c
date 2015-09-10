@@ -28,7 +28,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void main(int argv, char* argc[])
+int main(int argv, char* argc[])
 {
 	//create variables
 	pid_t childPID = 0;
@@ -60,7 +60,7 @@ void main(int argv, char* argc[])
 		}//else
 	}//for
 
-
+	return;
 }//main
 
 
