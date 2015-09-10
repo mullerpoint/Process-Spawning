@@ -60,7 +60,6 @@ int main(int argv, char* argc[])
 			printf("oops");
 		}//else
 
-		//printf("!!!REMOVE ME!!!    %d   !!!REMOVE ME!!!", childCount);
 	}//for
 
 	return 1;
