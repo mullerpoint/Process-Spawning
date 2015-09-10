@@ -11,8 +11,8 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Header files - Standard libraries and classes
-#include <unistd.h>
 #include <stdio.h>
+#include <unistd.h>
 //
 
 //Global Variables and Defines
@@ -34,26 +34,26 @@ int main(int argv, char* argc[])
 	pid_t parentPID = getpid();
 	int childCount;
 
-	//for loop to create 
+	//for loop to create child processes
 	for (childCount = 0; childCount < 3; childCount++)
 	{
-		childPID = fork();
+		childPID = fork();//statement to create child process
 
-		if (childPID == 0)
+		if (childPID == 0)//if child process
 		{
-			printf("I am child #%d, my pid is %l; my parent's pid is %l\n", childCount+1, getpid(), parentPID); //print the statement that it is a child and the PID
-			if (childCount != 1)
+			printf("\tI am child #%d, my pid is %d; my parent's pid is %d\n", childCount+1, getpid(), parentPID); //print the statement that it is a child and the PID
+			if (childCount != 1)//if this is child two(2) replace it 
 			{
 				execv(SPAWN_PROCESS_NAME, NULL); //if its process two replace the process with the execv() command
 			}//if
 			
 		}//if
-		else if (childPID > 0)
+		else if (childPID > 0)//if parent process
 		{
-			printf("Parent, my pid is %l: Spawned child #%d whose pid is %l\n", parentPID, childCount+1, childPID);//print the statement that it is a parent and the PID
-			childPID = 0;
+			printf("Parent, my pid is %d: Spawned child #%d whose pid is %d\n", parentPID, childCount+1, childPID);//print the statement that it is a parent and the PID
+			childPID = 0; //reset PID to 0 so next child spawned doesnt think its a parent
 		}//elseif
-		else if (childPID < 0)	
+		else if (childPID < 0)//if there is an error in process creation of the child
 		{
 			printf("oops");
 		}//else
