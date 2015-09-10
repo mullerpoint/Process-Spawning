@@ -1,0 +1,36 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Gary Muller
+// Fall 2015
+// CS 420 Assignment 1
+//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//A program that will spawn three child processes, print out the 
+//
+//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+#include <unistd.h>
+#include <stdio.h>
+
+main(){
+	pid_t childPID1 = 0, childPID2, childPID3;
+
+	childPID = fork();
+
+
+	if (childPID == 0)
+	{
+		printf("I am child #1, my pid is %l; my parent's pid is 6461\n", getpid());
+		execv("notepad.exe");
+	}
+	else if (childPID > 0)
+	{
+		printf("Parent, my pid is %l: Spawned child #1 whose pid is 6462\n", getpid(), childPID);
+	}
+	else(childPID < -1)
+	{
+		printf("oops");
+	}
+}
