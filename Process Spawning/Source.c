@@ -16,7 +16,7 @@
 //
 
 //Global Variables and Defines
-#define SPAWN_PROCESS_NAME "child3.exe"
+#define SPAWN_PROCESS_NAME "child2replacement.exe"
 //
 
 
@@ -41,19 +41,16 @@ int main(int argv, char* argc[])
 
 		if (childPID == 0)
 		{
-			if (childCount < 2)
+			printf("I am child #%d, my pid is %l; my parent's pid is %l\n", childCount+1, getpid(), parentPID); //print the statement that it is a child and the PID
+			if (childCount != 1)
 			{
-				printf("I am child #1, my pid is %l; my parent's pid is %l\n", getpid(), parentPID);
+				execv(SPAWN_PROCESS_NAME); //if its process two replace the process with the execv() command
 			}
-			else
-			{
-				execv(SPAWN_PROCESS_NAME);
-			}
-
+			
 		}
 		else if (childPID > 0)
 		{
-			printf("Parent, my pid is %l: Spawned child #1 whose pid is %l\n", parentPID, childPID);
+			printf("Parent, my pid is %l: Spawned child #%d whose pid is %l\n", parentPID, childCount+1, childPID);//print the statement that it is a parent and the PID
 			childPID = 0;
 		}
 		else(childPID < 0)
