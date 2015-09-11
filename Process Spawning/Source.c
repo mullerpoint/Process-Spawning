@@ -6,7 +6,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //A program that will spawn three child processes, print out the Parent and Child PIDs
-//it will utilize fork() and execl() to spawn the processes 
+//it will utilize fork() and execv() to spawn the processes 
 //specific implementations mean that this code will likely only run on RHEL
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -45,7 +45,7 @@ int main(int argv, char* argc[])
 			printf("\tI am child #%d, my pid is %d; my parent's pid is %d\n", childCount, getpid(), getppid()); //print the statement that it is a child and the PID
 			if (childCount == 2)//if this is child two(2) replace it 
 			{
-				execl(SPAWN_PROCESS_NAME, NULL); //if its process two replace the process with the execv() command
+				execv(SPAWN_PROCESS_NAME, NULL); //if its process two replace the process with the execv() command
 			}//if for child 2 replace
 			
 			childCount = 4;
