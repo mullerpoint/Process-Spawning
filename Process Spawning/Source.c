@@ -7,8 +7,9 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //A program that will spawn three child processes, print out the Parent and Child PIDs
 //it will utilize fork() and execv() to spawn the processes 
-//specific implementations mean that this code will likely only run on RHEL
+//***specific implementations of these functions mean that this code will likely only run on RHEL***
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 //Header files - Standard libraries and classes
 #include <stdio.h>
@@ -16,10 +17,10 @@
 #include <unistd.h>
 //
 
+
 //Global Variables and Defines
 #define SPAWN_PROCESS_NAME "child2replacement.exe"
 //
-
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -27,8 +28,7 @@
 //Main Declaration
 //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-int main(int argv, char* argc[])
+void main(int argv, char* argc[])
 {
 	//create variables
 	pid_t childPID = 0;
@@ -62,7 +62,6 @@ int main(int argv, char* argc[])
 
 	}//for
 
-	return 1;
 }//main
 
 
